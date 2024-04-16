@@ -1,0 +1,123 @@
+
+
+.instructions {
+  margin: 8% 38%;
+  padding: 50px 50px;
+  max-width: 100%;
+  border: 2 px black;
+  font-size: 16px;
+  line-height: 1.5;
+ 
+ 
+}
+
+ .container {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  left: 20%;
+  bottom: 70px;
+}
+
+.box {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+
+.box-1 {
+  top: 100px;
+
+  height: 600px;
+  width: 400px;
+  background-color: rgb(236, 238, 238);
+}
+
+.box-2 {
+  left: 85%;
+  top: 100%;
+  margin-bottom: 200px;
+  width: 700px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(212, 220, 212);
+}
+
+.text {
+  font-size: 20px;
+  margin-top: 50px;
+}
+.item {
+  margin-top: 20%;
+}
+#btn {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+  color: red;
+}
+
+#btn:hover {
+  background-color: white;
+}
+
+
+.input-field {
+  width: 140%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.circle {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin-left: 10px;
+}
+
+
+.submit-button {
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+  color: red;
+}
+
+
+.submit-button:hover {
+  background-color: white;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+}
+
+.definition {
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .instructions {
+    margin: 8% 10%;
+    padding: 30px;
+    font-size: 14px; /* Adjust as needed */
+  }
+}
+

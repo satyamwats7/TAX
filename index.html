@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>  
+
+   <div id="output"></div>
+
+    <div class="instructions">
+            <div>Enter gross annual income <i class="fa fa-question-circle"></i></div>
+
+            <div><input type="text" id="grossAnnualIncome"  placeholder="Please enter only numeric value " class="input-field"/></div>
+
+              <div className="p">Enter extra income<i class="fa fa-question-circle hov"></i></div>
+
+            <div><input type="text" id="extraIncome"  placeholder="Enter extra income " class="input-field"/></div>
+        
+         
+         
+            <div>Enter age group <i class="fa fa-question-circle"></i></div>
+            <div><input type="number" id="ageGroup" class="input-field" name="ageGroup"></div>
+      
+            <div>Enter total applicable deductions <i class="fa fa-question-circle"></i></div>
+            <div><input type="text" id="totalDeductions" placeholder="Enter total applicable deductions" class="input-field" /></div>
+        
+            <div><button id="submit" class="submit-button">Submit</button></div>
+            <!-- <button className="submit">submit</button> -->
+            <div><div class="error-message">Please enter numbers only</div></div>
+
+
+
+             <div class="container">
+      <div class="box box-1"></div>
+      <div class="box box-2">
+        <div class="item">
+          <h1>Your overall income will be</h1>
+          <h2>12,00,00</h2>
+          <h3>after tax deductions</h3>
+          <button id="btn">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- </div> -->
+
+<script>
+document.getElementById("grossAnnualIncome").addEventListener("keydown", function(event) {
+  // Allow only backspace, delete, tab, escape, enter, and numeric characters
+  if (![46, 8, 9, 27, 13, 110, 190].includes(event.keyCode) &&
+      (event.keyCode < 48 || event.keyCode > 57) &&
+      (event.keyCode < 96 || event.keyCode > 105)) {
+    event.preventDefault();
+  }
+});
+</script>
+
+<script>
+    document.getElementById('submit').addEventListener('click', function() {
+  var grossAnnualIncome = document.getElementById('grossAnnualIncome').value;
+  var extraIncome = document.getElementById('extraIncome').value;
+  var ageGroup = document.getElementById('ageGroup').value;
+  var totalDeductions = document.getElementById('totalDeductions').value;
+
+
+  if (isNaN(grossAnnualIncome) || isNaN(extraIncome) || isNaN(ageGroup) || isNaN(totalDeductions)) {
+  } else {
+    var incomeAfterDeductions = parseInt(grossAnnualIncome) + parseInt(extraIncome) - parseInt(totalDeductions);
+    var tax = 0;
+
+    if (incomeAfterDeductions > 800000) {
+      if (ageGroup < 40) {
+        tax = 0.3 * (incomeAfterDeductions - 800000);
+      } else if (ageGroup >= 40 && ageGroup < 60) {
+        tax = 0.4 * (incomeAfterDeductions - 800000);
+      } else {
+        tax = 0.1 * (incomeAfterDeductions - 800000);
+      }
+    }
+  }
+ 
+    showModal(incomeAfterDeductions, tax);
+    function showModal(income,tax){
+         document.write( `incomeAfterDeductions= ${income}  ${tax}`);
+       
+
+    }
+
+       
+          
+    }
+
+   
+  
+  
+);
+</script>
+</body>
+</html>
